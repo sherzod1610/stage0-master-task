@@ -115,7 +115,31 @@ public class ArrayTasks {
      * arr = [[3, 1, 2,], [3,2]] -> [[2, 3], [1, 2, 3]] arr = [[5, 4], [7]]       -> [[7], [4, 5]]
      */
     public int[][] sortRaggedArray(int[][] arr) {
-        return null;
+        // Sort the input array by the length of its subarrays in ascending order
+    for (int i = 0; i < arr.length; i++) {
+        for (int j = i + 1; j < arr.length; j++) {
+            if (arr[i].length > arr[j].length) {
+                int[] temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    
+    // Sort each subarray in ascending order
+    for (int i = 0; i < arr.length; i++) {
+        for (int j = 0; j < arr[i].length; j++) {
+            for (int k = j + 1; k < arr[i].length; k++) {
+                if (arr[i][j] > arr[i][k]) {
+                    int temp = arr[i][j];
+                    arr[i][j] = arr[i][k];
+                    arr[i][k] = temp;
+                }
+            }
+        }
+    }
+    
+    return arr;
     }
 
 }
