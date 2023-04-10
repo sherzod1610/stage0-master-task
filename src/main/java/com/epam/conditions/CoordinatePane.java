@@ -3,15 +3,15 @@ package com.epam.conditions;
 public class CoordinatePane {
     public void printQuadrant (int x, int y) {
         if (x > 0 && y > 0) {
-            System.out.println("First quadrant ");
+            System.out.println("First");
         } else if (x < 0 && y > 0) {
-            System.out.println("Second quadrant ");
+            System.out.println("Second");
         } else if (x < 0 && y < 0) {
-            System.out.println("Third quadrant");
+            System.out.println("Third");
         } else if (x > 0 && y < 0) {
-            System.out.println("Fourth quadrant");
+            System.out.println("Fourth");
         } else {
-            System.out.println("The point is at the origin (0,0)");
+            System.out.println("0");
         }
     }
 }
